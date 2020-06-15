@@ -12,8 +12,8 @@ android {
 		targetSdkVersion rootProject.targetSdk
 		versionCode 1
 		versionName "1.0"
-
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+		multiDexEnabled true
 	}
 
 	buildTypes {
@@ -72,6 +72,9 @@ dependencies {
 	kapt "com.google.dagger:dagger-compiler:$dagger"
 	implementation "com.google.dagger:dagger-android-support:$dagger"
 	kapt "com.google.dagger:dagger-android-processor:$dagger"
+
+	implementation project(':common')
+	implementation project(':model')
 
 	testImplementation "junit:junit:$jUnit"
 	testImplementation "org.mockito:mockito-core:$mockito"

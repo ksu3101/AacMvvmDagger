@@ -1,14 +1,14 @@
-package com.swkang.ex.aacmvvmdagger.view
+package com.swkang.ex.aacmvvmdagger.view.restingplaces
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.swkang.ex.aacmvvmdagger.R
+import com.swkang.ex.aacmvvmdagger.base.BaseActivity
 
 /**
  * @author kangsungwoo
  * @since 5/27/2020
  */
-class RestingPlacesActivity : AppCompatActivity() {
+class RestingPlacesActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
