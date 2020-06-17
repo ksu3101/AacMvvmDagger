@@ -9,6 +9,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.swkang.ex.model.BR
 import com.swkang.ex.model.base.BaseViewModel
 import com.swkang.ex.model.base.redux.AppStore
 import com.swkang.ex.model.base.redux.State
@@ -68,8 +69,8 @@ abstract class BaseFragment<S: State>: Fragment(), HasAndroidInjector {
             container,
             false
         )
+        binding.setVariable(BR.vm, viewModel)
         binding.lifecycleOwner = viewLifecycleOwner
-
         return binding.root
     }
 

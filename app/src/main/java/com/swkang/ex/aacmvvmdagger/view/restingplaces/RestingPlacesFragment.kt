@@ -22,5 +22,4 @@ class RestingPlacesFragment: BaseFragment<RestingPlacesState>() {
 
     override fun getLayoutId(): Int = R.layout.restingplaces_fragment
 
-
 }
