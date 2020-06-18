@@ -62,6 +62,7 @@ abstract class BaseFragment<S: State>: Fragment(), HasAndroidInjector {
                     }
                 }
         )
+        viewModel = createViewModel()
 
         binding = DataBindingUtil.inflate(
             inflater,

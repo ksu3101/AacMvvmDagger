@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.swkang.ex.aacmvvmdagger.R
 import com.swkang.ex.aacmvvmdagger.base.BaseFragment
 import com.swkang.ex.model.base.BaseViewModel
-import domain.RestingPlacesState
-import domain.RestingPlacesViewModel
+import domain.restingplaces.RestingPlacesState
+import domain.restingplaces.RestingPlacesViewModel
 import javax.inject.Inject
 
 /**

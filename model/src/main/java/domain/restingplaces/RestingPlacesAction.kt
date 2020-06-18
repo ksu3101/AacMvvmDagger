@@ -1,4 +1,4 @@
-package domain
+package domain.restingplaces
 
 import com.swkang.ex.model.base.redux.Action
 

@@ -1,6 +1,7 @@
 package com.swkang.ex.aacmvvmdagger.view.restingplaces
 
 import android.os.Bundle
+import androidx.fragment.app.commit
 import com.swkang.ex.aacmvvmdagger.R
 import com.swkang.ex.aacmvvmdagger.base.BaseActivity
 
@@ -13,6 +14,10 @@ class RestingPlacesActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.restingplaces_activity)
+
+        supportFragmentManager.commit {
+            replace(R.id.fragmentContainer, RestingPlacesFragment())
+        }
     }
 
 }
