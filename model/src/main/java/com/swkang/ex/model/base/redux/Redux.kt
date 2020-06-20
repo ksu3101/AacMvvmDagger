@@ -16,7 +16,7 @@ interface Reducer<S : State> {
 typealias Dispatcher = (Action) -> Unit
 
 interface Store<S: State> {
-    fun getState(): S?
+    fun getState(): S
 
     fun dispatch(action: Action)
 

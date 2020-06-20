@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.swkang.ex.model.base.BaseViewModel
 import domain.restingplaces.dto.RestingPlace
+import domain.restingplaces.dto.restingPlacesMock
 import javax.inject.Inject
 
 /**
@@ -29,13 +30,7 @@ class RestingPlacesViewModel @Inject constructor(
 
     init {
         // FIXME : for TEST
-        _restingPlaceItems.value = listOf(
-            RestingPlace(100, "AA AAA"),
-            RestingPlace(101, "BBB"),
-            RestingPlace(102, "CCCC CC CCCC C")
-        )
-
-        Log.e("RestingPlacesViewModel", "Initlaized ViewModel // _restingPlaceItems.size() = ${_restingPlaceItems.value!!.size}")
+        _restingPlaceItems.value = restingPlacesMock
     }
 
     override fun render(state: RestingPlacesState): Boolean {

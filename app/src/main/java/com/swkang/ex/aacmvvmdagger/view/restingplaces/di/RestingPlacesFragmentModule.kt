@@ -1,8 +1,8 @@
 package com.swkang.ex.aacmvvmdagger.view.restingplaces.di
 
 import androidx.lifecycle.ViewModel
-import com.swkang.ex.aacmvvmdagger.base.ViewModelBuilder
-import com.swkang.ex.aacmvvmdagger.base.ViewModelKey
+import com.swkang.ex.aacmvvmdagger.base.di.factory.ViewModelBuilder
+import com.swkang.ex.aacmvvmdagger.base.di.factory.ViewModelKey
 import com.swkang.ex.aacmvvmdagger.view.restingplaces.RestingPlacesFragment
 import dagger.Binds
 import dagger.Module
@@ -26,3 +26,4 @@ abstract class RestingPlacesFragmentModule {
     abstract fun bindViewModel(viewModel: RestingPlacesViewModel): ViewModel
 
 }
+

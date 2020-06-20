@@ -1,4 +1,4 @@
-package com.swkang.ex.aacmvvmdagger.base
+package com.swkang.ex.aacmvvmdagger.base.di.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

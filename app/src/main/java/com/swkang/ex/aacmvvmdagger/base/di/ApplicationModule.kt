@@ -1,8 +1,14 @@
 package com.swkang.ex.aacmvvmdagger.base.di
 
-import com.swkang.ex.model.base.redux.AppStore
+import android.content.Context
+import com.swkang.ex.aacmvvmdagger.base.helper.MessageHelperImpl
+import com.swkang.ex.aacmvvmdagger.base.helper.ResourceHelperImpl
+import com.swkang.ex.model.base.helper.MessageHelper
+import com.swkang.ex.model.base.helper.ResourceHelper
+import com.swkang.ex.model.base.redux.*
 import dagger.Module
 import dagger.Provides
+import domain.restingplaces.RestingPlacesReducer
 import javax.inject.Singleton
 
 /**
@@ -14,8 +20,56 @@ object ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideAppStore(): AppStore {
-        return AppStore()
+    fun provideAppState(): AppState {
+        return AppState(mapOf())
+    }
+
+    @Singleton
+    @Provides
+    fun provideAppReducer(
+        appState: AppState,
+        restingPlacesReducer: RestingPlacesReducer
+    ): AppReducer {
+        return AppReducer(
+            appState,
+            listOf(
+                restingPlacesReducer
+            )
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideMiddlewares(): List<MiddleWare<AppState>> {
+        return listOf(
+            ActionProcessorMiddleware(
+                CombinedActionProcessor(
+                    listOf()
+                )
+            )
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideAppStore(
+        appState: AppState,
+        reducers: AppReducer,
+        middlewares: List<MiddleWare<AppState>>
+    ): AppStore {
+        return AppStore(appState, reducers, middlewares)
+    }
+
+    @Singleton
+    @Provides
+    fun provideMessageHelper(context: Context): MessageHelper {
+        return MessageHelperImpl(context)
+    }
+
+    @Singleton
+    @Provides
+    fun provideResourceHelper(context: Context): ResourceHelper {
+        return ResourceHelperImpl(context)
     }
 
 }
