@@ -40,7 +40,7 @@ object ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideMiddlewares(): List<MiddleWare<AppState>> {
+    fun provideMiddlewares(): @JvmSuppressWildcards List<MiddleWare<AppState>> {
         return listOf(
             ActionProcessorMiddleware(
                 CombinedActionProcessor(
@@ -55,7 +55,7 @@ object ApplicationModule {
     fun provideAppStore(
         appState: AppState,
         reducers: AppReducer,
-        middlewares: List<MiddleWare<AppState>>
+        middlewares: @JvmSuppressWildcards List<MiddleWare<AppState>>
     ): AppStore {
         return AppStore(appState, reducers, middlewares)
     }

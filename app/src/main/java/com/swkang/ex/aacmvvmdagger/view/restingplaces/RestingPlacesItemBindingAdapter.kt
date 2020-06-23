@@ -1,6 +1,7 @@
 package com.swkang.ex.aacmvvmdagger.view.restingplaces
 
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.swkang.ex.aacmvvmdagger.R

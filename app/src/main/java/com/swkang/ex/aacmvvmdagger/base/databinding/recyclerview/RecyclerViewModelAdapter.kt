@@ -23,7 +23,8 @@ class RecyclerViewModelAdapter<E>(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBindingViewHolder<E> {
         val binding = DataBindingUtil.inflate<ViewDataBinding>(
-            LayoutInflater.from(parent.context), viewType, parent, false)
+            LayoutInflater.from(parent.context), viewType, parent, false
+        )
         val viewHolder = DataBindingViewHolder<E>(binding)
         onItemClickedListener?.let {
             binding.root.setOnClickListener { it(getItem(viewHolder.adapterPosition)) }

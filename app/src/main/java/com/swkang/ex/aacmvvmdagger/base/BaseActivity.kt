@@ -2,6 +2,7 @@ package com.swkang.ex.aacmvvmdagger.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.swkang.ex.model.base.helper.MessageHelper
 import com.swkang.ex.model.base.redux.AppStore
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
@@ -23,6 +24,8 @@ abstract class BaseActivity : AppCompatActivity(), HasAndroidInjector {
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
     @Inject
     lateinit var appStore: AppStore
+    @Inject
+    lateinit var messageHelper: MessageHelper
     private val compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +58,10 @@ abstract class BaseActivity : AppCompatActivity(), HasAndroidInjector {
     private fun handleMessageState(state: MessageState) {
         when(state) {
             is ShowToastMessageState -> {
-
+                messageHelper.showToast(state.messageResId)
             }
+
         }
     }
+
 }
